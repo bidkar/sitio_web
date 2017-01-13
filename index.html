@@ -9,24 +9,40 @@
   <meta name="author" content="Zaid Rodriguez">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Titulo</title>
-  <link rel="stylesheet" href="css/style.css">
+	<!-- CSS external -->
+  <link rel="stylesheet" href="css/styles.css">
   <script src="js/app.js"></script>
+	<!-- CSS document -->
+	<!--<style>
+		body { font-family: "Courier New", Courier, monospace}
+	</style>-->
 </head>
 <body>
 	<!--header>h1{Universidad de Occidente}+h3{Unidad Guasave}</!-->
-	<header>
+	<header id="encabezado">
+		<!-- CSS inline -->
+		<!--<h1 style="text-decoration: underline;">Universidad de Occidente</h1>-->
 		<h1>Universidad de Occidente</h1>
 		<h3>Unidad Guasave</h3>
 	</header>
 	<!-- main>figure>img[src="#" alt="Text alt" width=960 height=320]+legend{Texto de la imagen} -->
-	<main>
-		<figure>
-			<img src="#" alt="Text alt" width="960" height="320">
-			<legend>Texto de la imagen</legend>
-		</figure>
+	<main id="contenido">
+		<form action="#">
+			<label for="">Usuario</label>
+			<input type="text" name="txtUsuario" id="txtUsuario">
+			<label for="">Contraseña</label>
+			<input type="password" name="txtPassword" id="txtPassword">
+			<!--label>input:checkbox[name=remember id=remember]{Mantener la sesion iniciada}-->
+			<label>
+				<input type="checkbox" name="remember" id="remember">
+				Mantener la sesion iniciada
+			</label>
+			<button type="submit">Iniciar sesion</button>
+			<a href="lost.html">Olvido su contraseña</a>
+		</form>
 	</main>
 	<!-- footer>hr+p{Todos los derechos reservados &copy; 2017} -->
-	<footer>
+	<footer id="pie">
 		<hr>
 		<p>Todos los derechos reservados &copy; 2017</p>
 	</footer>
