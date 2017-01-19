@@ -1,1 +1,51 @@
-/*TODO agregar codigo css*/
+/* Reglas CSS */
+/*
+regla {
+    propiedad: valor;
+}
+*/
+
+/* Tipo etiqueta */
+body, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Tipo ID */
+#encabezado {
+    background-color: #851249;
+    color: white;
+    padding: 10px;
+}
+
+#login-form {
+    width: 300px;
+    margin: 0 auto;
+    /*  margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin: 10px; Aplica 10px a los 4 lados
+        margin: 5px 10px; Aplica 5px top-bottom y 10px right-left
+        margin: 5px 10px 6px; Aplica 5px top, 10px right-left, 6px bottom
+        margin: 1px 2px 3px 4px; Aplica 1px top, 2px right, 3px bottom, 4px left
+    */
+}
+
+/* Tipo clase */
+.negrita {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form-control label {
+    display: block;
+}
+
+.form-control input[type=text], .form-control input[type=password] {
+    width: 98%;
+}

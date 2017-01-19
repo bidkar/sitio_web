@@ -7,31 +7,47 @@
   <meta name="description" content="Sitio web de la udeo de sistemas computacionales">
   <meta name="author" content="Bidkar Aragon Cardenas">
   <title>Titulo</title>
+  <!-- CSS External -->
   <link rel="stylesheet" href="css/styles.css">
+  <!-- CSS Document -->
+  <style>
+  	/* Reglas y propiedades CSS */
+  </style>
   <script src="js/app.js"></script>
 </head>
 <body>
-	<header>
+	<!-- CSS Inline -->
+	<!--<header style="background-color: brown;">-->
+  	<!--header>h1{Universidad de Occidente}+h3{Unidad Guasave}-->
+	<header id="encabezado">
 		<h1>Universidad de Occidente</h1>
 		<h3>Unidad Guasave</h3>
 	</header>
-	<main>
-		<form action="#">
-			<!--label[for=txtUsuario]{Usuario:}+input:text[name=txtUsuario id=txtUsuario]-->
-			<label for="txtUsuario">Usuario:</label>
-			<input type="text" name="txtUsuario" id="txtUsuario">
-			<!--label[for=txtPasswd]{Contraseña:}+input:password[name=txtPasswd id=txtPasswd]-->
-			<label for="txtPasswd">Contraseña:</label>
-			<input type="password" name="txtPasswd" id="txtPasswd">
-			<label for="remember">
-				<input type="checkbox" name="remember" id="remember">
-				Mantener la sesion iniciada
-			</label>
+	<main id="principal">
+		<form id="login-form">
+			<div class="form-control">
+				<label for="txtUsuario" class="negrita">Usuario:</label>
+				<input type="text" name="txtUsuario" id="txtUsuario">
+			</div>
+			<div class="form-control">
+				<label for="txtPasswd" class="negrita">Contraseña:</label>
+				<input type="password" name="txtPasswd" id="txtPasswd">
+			</div>
+			<div class="form-control">
+				<label for="remember" class="negrita">
+					<input type="checkbox" name="remember" id="remember">
+					Mantener la sesion iniciada
+				</label>
+			</div>
+			<div class="form-control">
+				<button type="submit">Iniciar sesión</button>
+			</div>
+			<a href="lost.html">¿Olvidaste tu contraseña?</a>
 		</form>
 	</main>
-	<footer>
+	<footer id="pie">
 		<hr>
-		<p>Todos los derechos reservados &copy; 2017</p>
+		<p class="negrita">Todos los derechos reservados &copy; 2017</p>
 	</footer>
 </body>
 </html>
