@@ -12,6 +12,10 @@ body, h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
+body {
+    background-color: #B7AD7D;
+}
+
 /* Tipo ID */
 #encabezado {
     background-color: #851249;
@@ -21,7 +25,12 @@ body, h1, h2, h3, h4, h5, h6 {
 
 #login-form {
     width: 300px;
-    margin: 0 auto;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
     /*  margin-top: 10px;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -42,10 +51,22 @@ body, h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.block {
+    display: block;
+}
+
 .form-control label {
     display: block;
 }
 
-.form-control input[type=text], .form-control input[type=password] {
+.form-control input[type=text], .form-control input[type=password], .form-control button {
     width: 98%;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.form-control button {
+    font-size: .8em;
 }
