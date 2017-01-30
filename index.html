@@ -23,7 +23,7 @@
 		<h3>Unidad Guasave</h3>
 	</header>
 	<main id="principal">
-		<form id="login-form">
+		<form id="login-form" method="post" action="login.php">
 			<div class="form-control">
 				<label for="txtUsuario" class="negrita">Usuario:</label>
 				<input type="text" name="txtUsuario" id="txtUsuario">
@@ -39,7 +39,7 @@
 				</label>
 			</div>
 			<div class="form-control">
-				<button onclick="login()">Iniciar sesión</button>
+				<button type="submit">Iniciar sesión</button>
 			</div>
 			<a href="lost.html" class="text-center block">¿Olvidaste tu contraseña?</a>
 		</form>

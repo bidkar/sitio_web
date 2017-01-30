@@ -1,5 +1,4 @@
 <?php
-require 'conexion.php';
 class Usuario {
     private $datos = [
         'id' => '',
@@ -10,18 +9,30 @@ class Usuario {
     ];
 
     public static function login($username, $passwd) {
+        $datos = ['data' => ['login'=>'']];
         $cnn = new Conexion();
         $sql = sprintf("select * from usuarios where username='%s' and passwd='%s'", $username, md5($passwd));
-        $rst = $cnn->query($sql);
+        $rst = $cnn->query($sql); //$rst = mysqli_result
+        $cnn->close();
         if (!$rst) {
-            return 'error en la consulta';
+            $datos['data']['login'] = 'fail';
         } else {
             if ($rst->num_rows == 1) {
-                // agregar codigo para recoger valores de usuario
+                $usuario = new Usuario();
+                $r = $rst->fetch_assoc(); // $r = array asociativo del resultset
+                $usuario->id = $r['id'];
+                $usuario->username = $r['username'];
+                $usuario->nombre = $r['nombre'];
+                $usuario->apellidos = $r['apellidos'];
+                $usuario->email = $r['email'];
+
+                $datos['data']['login'] = true;
+                $datos['data']['usuario'] = $usuario->datos;
             } else {
-                return 'no hay registros';
+                $datos['data']['login'] = false;
             }
         }
+        return json_encode($datos, JSON_PRETTY_PRINT);
     }
 
     public function __get($campo) {
@@ -33,4 +44,5 @@ class Usuario {
     }
 }
 
-$usuario = Usuario::login('bidkar','123');
+// $usuario = Usuario::login('bidkar','123');
+// echo $usuario;
