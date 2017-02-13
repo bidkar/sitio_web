@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['usuario'])) {
+    header('Location:perfil.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +30,11 @@
 	</header>
 	<main id="principal">
 		<form id="login-form" method="post" action="login.php">
+			<?php if (isset($_GET['error'])) { ?>
+			<div class="error">
+				Usuario o contraseña incorrecta
+			</div>
+			<?php } ?>
 			<div class="form-control">
 				<label for="txtUsuario" class="negrita">Usuario:</label>
 				<input type="text" name="txtUsuario" id="txtUsuario">

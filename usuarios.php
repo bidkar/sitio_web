@@ -9,15 +9,19 @@ class Usuario {
     ];
 
     public static function login($username, $passwd) {
-        $datos = ['data' => ['login'=>'']];
+        // $datos = ['data' => ['login'=>'']];
         $cnn = new Conexion();
         $sql = sprintf("select * from usuarios where username='%s' and passwd='%s'", $username, md5($passwd));
         $rst = $cnn->query($sql); //$rst = mysqli_result
         $cnn->close();
         if (!$rst) {
-            $datos['data']['login'] = 'fail';
+            // $datos['data']['login'] = 'fail';
+            // cuando la consulta falla
+            return false;
         } else {
+            // cuando se ejecute correctamente la consulta
             if ($rst->num_rows == 1) {
+                // cuando tenga un registro
                 $usuario = new Usuario();
                 $r = $rst->fetch_assoc(); // $r = array asociativo del resultset
                 $usuario->id = $r['id'];
@@ -26,13 +30,16 @@ class Usuario {
                 $usuario->apellidos = $r['apellidos'];
                 $usuario->email = $r['email'];
 
-                $datos['data']['login'] = true;
-                $datos['data']['usuario'] = $usuario->datos;
+                return $usuario;
+                // $datos['data']['login'] = true;
+                // $datos['data']['usuario'] = $usuario->datos;
             } else {
-                $datos['data']['login'] = false;
+                // cuando no obtiene registros
+                // $datos['data']['login'] = false;
+                return null;
             }
         }
-        return json_encode($datos, JSON_PRETTY_PRINT);
+        // return json_encode($datos, JSON_PRETTY_PRINT);
     }
 
     public function __get($campo) {

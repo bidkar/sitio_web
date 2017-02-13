@@ -70,3 +70,11 @@ body {
 .form-control button {
     font-size: .8em;
 }
+
+.error {
+    background-color: rgba(256,0,0,.25);
+    border: 1px solid red;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
