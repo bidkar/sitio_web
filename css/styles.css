@@ -23,7 +23,7 @@ body {
     padding: 10px;
 }
 
-#login-form {
+/*#login-form {
     width: 300px;
     margin: 20px auto;
     background-color: white;
@@ -39,8 +39,8 @@ body {
         margin: 5px 10px; Aplica 5px top-bottom y 10px right-left
         margin: 5px 10px 6px; Aplica 5px top, 10px right-left, 6px bottom
         margin: 1px 2px 3px 4px; Aplica 1px top, 2px right, 3px bottom, 4px left
-    */
-}
+    
+}*/
 
 /* Tipo clase */
 .negrita {
